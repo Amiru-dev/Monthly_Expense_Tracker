@@ -24,7 +24,7 @@ using namespace std;
 // ============================================
 const int NUM_CATEGORIES = 5;
 const string CATEGORIES[] = {"Food", "Travel", "Utilities", "Entertainment", "Other"};
-const double BUDGET_LIMITS[] = {1000.0, 5000.0, 8000.0, 3000.0, 2000.0};
+const double BUDGET_LIMITS[] = {10000.0, 5000.0, 8000.0, 3000.0, 2000.0};
 
 // ============================================
 // FUNCTION DEFINITIONS
@@ -43,8 +43,7 @@ void displayWelcomeMessage() {
     cout << "Budget Limits:\n";
 
     for (int i = 0; i < NUM_CATEGORIES; i++) {
-        cout << "  - " << CATEGORIES[i] << ": $" << fixed << setprecision(2)
-             << BUDGET_LIMITS[i] << endl;
+        cout << "  - " << CATEGORIES[i] << ": $" << fixed << setprecision(2) << BUDGET_LIMITS[i] << endl;
     }
     cout << "\n";
 }
@@ -62,25 +61,16 @@ void inputExpenses(double expenses[]) {
     cout << fixed << setprecision(2); // Set output to 2 decimal places
 
     for (int i = 0; i < NUM_CATEGORIES; i++) {
-        bool validInput = false;
-
-        while (!validInput) {
+        while (true) {
             cout << "Enter expense for " << CATEGORIES[i] << ": $";
 
-            // Check if input is a valid number
-            if (cin >> expenses[i]) {
-                // Validate expense is non-negative
-                if (expenses[i] >= 0) {
-                    validInput = true;
-                } else {
-                    cout << "Error: Expense cannot be negative. Please enter a valid amount.\n";
-                }
-            } else {
-                // Clear error state and ignore invalid input
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Error: Invalid input. Please enter a numeric value.\n";
+            if (cin >> expenses[i] && expenses[i] >= 0) {
+                break;
             }
+
+            cout << "Invalid input. Please enter a non-negative number.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
     }
     cout << endl;
@@ -157,8 +147,7 @@ void checkBudgetLimits(const double expenses[]) {
             alertShown = true;
             overBudgetCount++;
 
-            cout << "ALERT: " << CATEGORIES[i]
-                 << " exceeded the budget limit (" << BUDGET_LIMITS[i] << ")!\n";
+            cout << "ALERT: " << CATEGORIES[i] << " exceeded the budget limit (" << BUDGET_LIMITS[i] << ")!\n";
         }
     }
 
