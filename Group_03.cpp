@@ -23,8 +23,8 @@ using namespace std;
 // CONSTANT DEFINITIONS
 // ============================================
 const int NUM_CATEGORIES = 5;
-const string CATEGORIES[] = {"Food", "Travel", "Utilities", "Entertainment", "Other"};
-const double BUDGET_LIMITS[] = {10000.0, 5000.0, 8000.0, 3000.0, 2000.0};
+const string CATEGORIES[5] = {"Food", "Travel", "Utilities", "Entertainment", "Other"};
+const double BUDGET_LIMITS[5] = {10000.0, 5000.0, 8000.0, 3000.0, 2000.0};
 
 // ============================================
 // FUNCTION DEFINITIONS
