@@ -57,7 +57,7 @@ void displayWelcomeMessage() {
  */
 void inputExpenses(double expenses[]) {
     cout << "=== ENTER EXPENSES ===\n\n";
-    cout << "Enter your monthly expenses for 5 categories.\n\n";
+    cout << "Enter your monthly expenses for " << NUM_CATEGORIES << " categories.\n\n";
     cout << fixed << setprecision(2); // Set output to 2 decimal places
 
     for (int i = 0; i < NUM_CATEGORIES; i++) {
