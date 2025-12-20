@@ -139,19 +139,17 @@ void findMinMaxExpenses(const double expenses[], int &maxIndex, int &minIndex) {
 void checkBudgetLimits(const double expenses[]) {
     cout << "\n=== BUDGET ALERTS ===\n";
 
-    bool alertShown = false;
     int overBudgetCount = 0;
 
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         if (expenses[i] > BUDGET_LIMITS[i]) {
-            alertShown = true;
             overBudgetCount++;
 
             cout << "ALERT: " << CATEGORIES[i] << " exceeded the budget limit (" << BUDGET_LIMITS[i] << ")!\n";
         }
     }
 
-    if (!alertShown) {
+    if (overBudgetCount == 0) {
         cout << "- All expenses are within budget limits. Excellent financial management!\n";
     } else {
         cout << "\n Summary: " << overBudgetCount << " category(ies) exceeded budget.\n";
