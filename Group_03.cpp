@@ -42,6 +42,7 @@ void displayWelcomeMessage() {
     cout << "=================================================\n\n";
     cout << "Budget Limits:\n";
 
+    // Display budget limits
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         cout << "  - " << CATEGORIES[i] << ": LKR " << fixed << setprecision(2) << BUDGET_LIMITS[i] << endl;
     }
@@ -60,6 +61,7 @@ void inputExpenses(double expenses[]) {
     cout << "Enter your monthly expenses for " << NUM_CATEGORIES << " categories.\n\n";
     cout << fixed << setprecision(2); // Set output to 2 decimal places
 
+    // Input expenses for 5 categories
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         while (true) {
             cout << "Enter expense for " << CATEGORIES[i] << ": LKR ";
@@ -86,6 +88,7 @@ void inputExpenses(double expenses[]) {
 double calculateTotal(const double expenses[]) {
     double total = 0.0;
 
+    // Calculate total expenses
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         total += expenses[i];
     }
@@ -101,6 +104,7 @@ double calculateTotal(const double expenses[]) {
  * Returns: double -> average expense
  */
 double calculateAverage(double total) {
+    // Calculate average
     return total / NUM_CATEGORIES;
 }
 
@@ -138,9 +142,10 @@ void findMinMaxExpenses(const double expenses[], int &maxIndex, int &minIndex) {
  */
 void checkBudgetLimits(const double expenses[]) {
     cout << "\n=== BUDGET ALERTS ===\n";
-
+    // Initialize the over-budget count
     int overBudgetCount = 0;
 
+    // Display alerts if budget is exceeded
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         if (expenses[i] > BUDGET_LIMITS[i]) {
             overBudgetCount++;
@@ -149,6 +154,7 @@ void checkBudgetLimits(const double expenses[]) {
         }
     }
 
+    // Display over-budget count or message
     if (overBudgetCount == 0) {
         cout << "- All expenses are within budget limits. Excellent financial management!\n";
     } else {
