@@ -44,7 +44,7 @@ void displayWelcomeMessage() {
 
     // Display budget limits
     for (int i = 0; i < NUM_CATEGORIES; i++) {
-        cout << "  - " << CATEGORIES[i] << ": LKR " << fixed << setprecision(2) << BUDGET_LIMITS[i] << endl;
+        cout << "  - " << CATEGORIES[i] << ": LKR " << BUDGET_LIMITS[i] << endl;
     }
     cout << "\n";
 }
