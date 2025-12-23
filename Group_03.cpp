@@ -59,7 +59,6 @@ void displayWelcomeMessage() {
 void inputExpenses(double expenses[]) {
     cout << "=== ENTER EXPENSES ===\n\n";
     cout << "Enter your monthly expenses for " << NUM_CATEGORIES << " categories.\n\n";
-    cout << fixed << setprecision(2); // Set output to 2 decimal places
 
     // Input expenses for 5 categories
     for (int i = 0; i < NUM_CATEGORIES; i++) {
@@ -88,7 +87,6 @@ void inputExpenses(double expenses[]) {
 double calculateTotal(const double expenses[]) {
     double total = 0.0;
 
-    // Calculate total expenses
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         total += expenses[i];
     }
@@ -103,8 +101,7 @@ double calculateTotal(const double expenses[]) {
  * Parameters: total -> total expenses
  * Returns: double -> average expense
  */
-double calculateAverage(double total) {
-    // Calculate average
+double calculateAverage(const double total) {
     return total / NUM_CATEGORIES;
 }
 
@@ -179,9 +176,6 @@ void displayExpenseSummary(const double expenses[], double total, double average
     cout << "         EXPENSE SUMMARY" << endl;
     cout << "======================================" << endl;
 
-    // Use iomanip functions for clean output formatting
-    cout << fixed << setprecision(2);
-
     // Display individual expenses
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         cout << "* " << setw(15) << left << CATEGORIES[i] << ": " << expenses[i] << endl;
@@ -189,10 +183,10 @@ void displayExpenseSummary(const double expenses[], double total, double average
     cout << "--------------------------------------" << endl;
 
     // Display calculated statistics (Task 6)
-    cout << "TOTAL EXPENSES         : " << total << endl;
-    cout << "AVERAGE EXPENSE        : " << average << endl;
-    cout << "HIGHEST CATEGORY       : " << CATEGORIES[maxIndex] << " (" << expenses[maxIndex] << ")" << endl;
-    cout << "LOWEST CATEGORY        : " << CATEGORIES[minIndex] << " (" << expenses[minIndex] << ")" << endl;
+    cout << "TOTAL EXPENSES       : " << total << endl;
+    cout << "AVERAGE EXPENSE      : " << average << endl;
+    cout << "HIGHEST CATEGORY     : " << CATEGORIES[maxIndex] << " (" << expenses[maxIndex] << ")" << endl;
+    cout << "LOWEST CATEGORY      : " << CATEGORIES[minIndex] << " (" << expenses[minIndex] << ")" << endl;
     cout << "======================================" << endl;
 }
 
@@ -200,6 +194,9 @@ void displayExpenseSummary(const double expenses[], double total, double average
 // MAIN FUNCTION
 // ============================================
 int main() {
+    // Use iomanip functions for clean output formatting
+    cout << fixed << setprecision(2);
+
     double expenses[NUM_CATEGORIES];      // Array to store expenses for each category
     double total, average;                // Total and average expenses
     int maxIndex, minIndex;               // Indices for highest and lowest expenses
