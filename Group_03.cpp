@@ -155,7 +155,7 @@ void checkBudgetLimits(const double expenses[]) {
     if (overBudgetCount == 0) {
         cout << "- All expenses are within budget limits. Excellent financial management!\n";
     } else {
-        cout << "\n Summary: " << overBudgetCount << " category(ies) exceeded budget.\n";
+        cout << "\nSummary: " << overBudgetCount << " category(ies) exceeded budget.\n";
     }
     cout << "================================================================\n";
 }
@@ -194,7 +194,7 @@ void displayExpenseSummary(const double expenses[], double total, double average
 // MAIN FUNCTION
 // ============================================
 int main() {
-    // Use iomanip functions for clean output formatting
+    // Set currency format: 2 decimal places for all monetary outputs
     cout << fixed << setprecision(2);
 
     double expenses[NUM_CATEGORIES];      // Array to store expenses for each category
