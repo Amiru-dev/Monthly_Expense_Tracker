@@ -200,7 +200,7 @@ int main() {
     double total, average;                // Total and average expenses
     int maxIndex, minIndex;               // Indices for highest and lowest expenses
 
-    // Display program welcome message
+    // Display program welcome information
     displayWelcomeInfo();
 
     // Step 1: Input expenses with validation
