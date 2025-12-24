@@ -31,12 +31,12 @@ const double BUDGET_LIMITS[NUM_CATEGORIES] = {10000.0, 5000.0, 8000.0, 3000.0, 2
 // ============================================
 
 /**
- * Function: displayWelcomeMessage
+ * Function: displayWelcomeInfo
  * Purpose: Displays program title and budget limits
  * Parameters: None
  * Returns: void
  */
-void displayWelcomeMessage() {
+void displayWelcomeInfo() {
     cout << "=================================================\n";
     cout << "   MONTHLY EXPENSE TRACKER WITH BUDGET ALERTS\n";
     cout << "=================================================\n\n";
@@ -132,12 +132,12 @@ void findMinMaxExpenses(const double expenses[], int &maxIndex, int &minIndex) {
 
 
 /**
- * Function: checkBudgetLimits
+ * Function: displayBudgetAlerts
  * Purpose: Checks if any category exceeds budget and displays alerts
  * Parameters: expenses[] -> array containing expense values
  * Returns: void
  */
-void checkBudgetLimits(const double expenses[]) {
+void displayBudgetAlerts(const double expenses[]) {
     cout << "\n=== BUDGET ALERTS ===\n";
     // Initialize the over-budget count
     int overBudgetCount = 0;
@@ -145,8 +145,8 @@ void checkBudgetLimits(const double expenses[]) {
     // Display alerts if budget is exceeded
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         if (expenses[i] > BUDGET_LIMITS[i]) {
-            overBudgetCount++;
 
+            overBudgetCount++;
             cout << "ALERT: " << CATEGORIES[i] << " exceeded the budget limit (" << BUDGET_LIMITS[i] << ")!\n";
         }
     }
@@ -183,10 +183,10 @@ void displayExpenseSummary(const double expenses[], double total, double average
     cout << "--------------------------------------" << endl;
 
     // Display calculated statistics (Task 6)
-    cout << "TOTAL EXPENSES       : " << total << endl;
-    cout << "AVERAGE EXPENSE      : " << average << endl;
-    cout << "HIGHEST CATEGORY     : " << CATEGORIES[maxIndex] << " (" << expenses[maxIndex] << ")" << endl;
-    cout << "LOWEST CATEGORY      : " << CATEGORIES[minIndex] << " (" << expenses[minIndex] << ")" << endl;
+    cout << "TOTAL EXPENSES      : " << total << endl;
+    cout << "AVERAGE EXPENSE     : " << average << endl;
+    cout << "HIGHEST CATEGORY    : " << CATEGORIES[maxIndex] << " (" << expenses[maxIndex] << ")" << endl;
+    cout << "LOWEST CATEGORY     : " << CATEGORIES[minIndex] << " (" << expenses[minIndex] << ")" << endl;
     cout << "======================================" << endl;
 }
 
@@ -202,7 +202,7 @@ int main() {
     int maxIndex, minIndex;               // Indices for highest and lowest expenses
 
     // Display program welcome message
-    displayWelcomeMessage();
+    displayWelcomeInfo();
 
     // Step 1: Input expenses with validation
     inputExpenses(expenses);
@@ -218,7 +218,7 @@ int main() {
     displayExpenseSummary(expenses, total, average, maxIndex, minIndex);
 
     // Step 5: Check budget limits and display alerts
-    checkBudgetLimits(expenses);
+    displayBudgetAlerts(expenses);
 
     return 0;
 }
