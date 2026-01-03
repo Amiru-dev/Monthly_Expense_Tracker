@@ -171,22 +171,22 @@ void displayBudgetAlerts(const double expenses[]) {
  * Returns: void
  */
 void displayExpenseSummary(const double expenses[], double total, double average, int maxIndex, int minIndex) {
-    cout << "\n======================================" << endl;
+    cout << "\n==============================================" << endl;
     cout << "         EXPENSE SUMMARY" << endl;
-    cout << "======================================" << endl;
+    cout << "==============================================" << endl;
 
     // Display individual expenses
     for (int i = 0; i < NUM_CATEGORIES; i++) {
-        cout << "* " << setw(15) << left << CATEGORIES[i] << ": " << expenses[i] << endl;
+        cout << "* " << setw(15) << left << CATEGORIES[i] << ": LKR " << expenses[i] << endl;
     }
-    cout << "--------------------------------------" << endl;
+    cout << "----------------------------------------------" << endl;
 
     // Display calculated statistics (Task 6)
-    cout << "TOTAL EXPENSES      : " << total << endl;
-    cout << "AVERAGE EXPENSE     : " << average << endl;
-    cout << "HIGHEST CATEGORY    : " << CATEGORIES[maxIndex] << " (" << expenses[maxIndex] << ")" << endl;
-    cout << "LOWEST CATEGORY     : " << CATEGORIES[minIndex] << " (" << expenses[minIndex] << ")" << endl;
-    cout << "======================================" << endl;
+    cout << "TOTAL EXPENSES      : LKR " << total << endl;
+    cout << "AVERAGE EXPENSE     : LKR " << average << endl;
+    cout << "HIGHEST CATEGORY    : " << CATEGORIES[maxIndex] << " (LKR " << expenses[maxIndex] << ")" << endl;
+    cout << "LOWEST CATEGORY     : " << CATEGORIES[minIndex] << " (LKR " << expenses[minIndex] << ")" << endl;
+    cout << "==============================================" << endl;
 }
 
 // ============================================
