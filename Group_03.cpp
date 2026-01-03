@@ -146,7 +146,7 @@ void displayBudgetAlerts(const double expenses[]) {
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         if (expenses[i] > BUDGET_LIMITS[i]) {
             overBudgetCount++;
-            cout << "ALERT: " << CATEGORIES[i] << " exceeded the budget limit (" << BUDGET_LIMITS[i] << ")!\n";
+            cout << "ALERT: " << CATEGORIES[i] << " exceeded the budget limit (LKR " << BUDGET_LIMITS[i] << ")!\n";
         }
     }
 
