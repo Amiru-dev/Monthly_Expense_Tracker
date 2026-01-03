@@ -172,7 +172,7 @@ void displayBudgetAlerts(const double expenses[]) {
  */
 void displayExpenseSummary(const double expenses[], double total, double average, int maxIndex, int minIndex) {
     cout << "\n==============================================" << endl;
-    cout << "         EXPENSE SUMMARY" << endl;
+    cout << "               EXPENSE SUMMARY" << endl;
     cout << "==============================================" << endl;
 
     // Display individual expenses
