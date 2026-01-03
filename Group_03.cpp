@@ -44,7 +44,7 @@ void displayWelcomeInfo() {
 
     // Display budget limits
     for (int i = 0; i < NUM_CATEGORIES; i++) {
-        cout << "  - " << CATEGORIES[i] << ": LKR " << BUDGET_LIMITS[i] << endl;
+        cout << "  - " << setw(15) << left << CATEGORIES[i] << ": LKR " << BUDGET_LIMITS[i] << endl;
     }
     cout << "\n";
 }
@@ -63,7 +63,7 @@ void inputExpenses(double expenses[]) {
     // Input expenses for 5 categories
     for (int i = 0; i < NUM_CATEGORIES; i++) {
         while (true) {
-            cout << "Enter expense for " << CATEGORIES[i] << ": LKR ";
+            cout << "Enter expense for " << setw(15) << left << CATEGORIES[i] << ": LKR ";
 
             if (cin >> expenses[i] && expenses[i] >= 0) {
                 break;
