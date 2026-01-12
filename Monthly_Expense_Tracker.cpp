@@ -1,15 +1,13 @@
 /*
- Group Number: 03
-
 Members:
- 1. A.U.Vidanapathirana – ITBSC/2025/EA/WD/003
- 2. Amaya Y.G.N. – ITBSC/2025/EA/WD/005
- 3. H.P.K.Jayathilaka – ITBSC/2025/EA/WD/004
+ 1. A.U.Vidanapathirana
+ 2. Amaya Y.G.N.
+ 3. H.P.K.Jayathilaka
 */
 
 /*
  * Monthly Expense Tracker with Budget Alerts
- * Scenario 4 - C++ Program
+ * C++ Program
  * Features: Modular design, Input validation, Budget alerts, Expense analysis
  */
 
