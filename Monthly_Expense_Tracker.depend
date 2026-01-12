@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1768231055 source:c:\users\asus\documents\github\monthly_expense_tracker\monthly_expense_tracker.cpp
+	<iostream>
+	<iomanip>
+	<string>
+	<limits>
+
